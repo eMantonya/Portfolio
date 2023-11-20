@@ -1,0 +1,28 @@
+<div id="contact" style="background-color: @PrimaryColor;">
+    <!--<div style="display: flex; justify-content: center; gap: 2.5rem;">-->
+        <p></p>
+    <!--</div>-->
+    <div style="display: flex; justify-content: center; gap: 2.5rem;">
+        <a href="https://github.com/eMantonya" target="_blank" rel="noopener noreferrer">
+            <img src="images/socials/github.svg" alt="GitHub" class="social-icon" />
+        </a>
+        <a href="https://linkedin.com/in/eric-mantonya" target="_blank" rel="noopener noreferrer">
+            <img src="images/socials/linkedin.svg" alt="LinkedIn" class="social-icon" />
+        </a>
+        <a href="mailto:sample@gmail.com)">
+            <img src="images/socials/envelope.svg" alt="email" class="social-icon" />
+        </a>
+    </div>
+    <p class="small" style="margin-top: 0; color: white;">Created by Eric Mantonya</p>
+    
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public required HttpClient Http { get; set; }
+
+    [Parameter]
+    public string PrimaryColor { get; set; } = string.Empty;
+    [Parameter]
+    public string SecondaryColor { get; set; } = string.Empty;
+}

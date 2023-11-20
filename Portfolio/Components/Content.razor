@@ -1,0 +1,34 @@
+﻿<section class="light" id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-container">
+        @if (projects is null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <div class="portfolio-hero">
+                <img src="images/design-desk.jpeg" style="height: 90%; width: 100%; object-fit: cover;" alt="desk-image" />
+            </div>
+            <div class="container">
+                @foreach (var project in projects)
+                {
+                    <div class="box" key="@project.Title">
+                        <a href="@project.Url" target="_blank" rel="noopener noreferrer">
+                            <h3 style="flex-basis: 40px;">@project.Title</h3>
+                        </a>
+                        <p class="small">@project.Description</p>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    [Parameter, EditorRequired]
+    public required HttpClient Http { get; set; }
+    private List<Project>? projects;
+
+    protected override async Task OnInitializedAsync() => projects = await Http.GetFromJsonAsync<List<Project>>(@"Data/projects.json");
+}
