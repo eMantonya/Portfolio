@@ -3,12 +3,26 @@
 
 <PageTitle>Portfolio</PageTitle>
 
-<Header />
+<Header ToggleResume="ToggleResume"/>
+
+@if (showResume)
+{
+    <Resume />
+}
+
 <Home />
 <About />
 <Content Http=@Http />
 
 <Footer Http=@Http PrimaryColor="#4E567E" SecondaryColor="#D2F1E4" />
 
+@code {
+    private bool showResume = false;
 
+    private void ToggleResume()
+    {
+        showResume = !showResume;
+        StateHasChanged();
+    }
+}
 

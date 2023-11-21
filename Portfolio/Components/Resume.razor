@@ -1,0 +1,12 @@
+﻿
+<div class="popup-container">
+    <div class="popup">
+        <button @onclick="ToggleResume" class="close-button">x</button>
+        <iframe src="Data/Resume.pdf" frameborder="0"></iframe>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback ToggleResume { get; set; }
+}

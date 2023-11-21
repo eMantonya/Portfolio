@@ -1,4 +1,7 @@
-<div id="header" style="position: fixed;
+@inject IJSRuntime JSRuntime
+
+<div id="header" style="position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -10,5 +13,15 @@
     <a href="#home" target="_top">Home</a>
     <a href="#about" target="_top">About</a>
     <a href="#portfolio" target="_top">Portfolio</a>
-    <a href="#contact" target="_top">Resume</a>
+    <a href="#" @onclick="ToggleResume">Resume</a>
 </div>
+
+@code {
+    [Parameter]
+    public EventCallback ToggleResume { get; set; }
+
+    private async Task InvokeToggleResume()
+    {
+        await ToggleResume.InvokeAsync();
+    }
+}

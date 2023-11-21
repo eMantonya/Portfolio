@@ -1,17 +1,17 @@
 [
   {
-    "title": "Project 1",
+    "title": "Console Mortgage Calculator",
     "description": "Description of project 1",
-    "url": "https://github.com/eMantonya"
+    "url": "https://github.com/eMantonya/Playground/tree/main/MortgageCalc2.0/MortgageCalculator2.0"
   },
   {
-    "title": "Project 2",
+    "title": "CapChat",
     "description": "Description of project 2",
-    "url": "https://github.com/eMantonya"
+    "url": "https://github.com/eMantonya/CapChat"
   },
   {
-    "title": "Project 3",
+    "title": "TrailFinder",
     "description": "Description of project 3",
-    "url": "https://github.com/eMantonya"
+    "url": "https://github.com/eMantonya/TrailFinder"
   }
 ]
